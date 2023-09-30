@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Search Account">
+        <div>
+            <lightning-input type="search" label="Search Keyword" onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Search Record" onclick={fetchAccountRecords}></lightning-button>
+        </div>
+    <template if:true={accountData}>
+        <template for:each={accountData} for:item="accObj">
+            <div key={accObj.Id}>
+                {accObj.Name}
+            </div>
+            <div key={accObj.Id}>
+                {accObj.AccountNumber}
+            </div>
+        </template>
+    </template>
+    </lightning-card>
+</template>
